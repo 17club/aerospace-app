@@ -1,0 +1,43 @@
+<view>
+  <navigation-bar navigation-data="{{navigationData}}"></navigation-bar>
+  <view class="exam-result">
+    <view class='header'
+      style="background-image: url(https://download.zhcslyg.com/wx/img/login-back.png); background-size: 100% 100%; background-repeat: no-repeat;">
+    </view>
+    <view class="title">驾驶员主动安全考试</view>
+    <view class="exam-content">
+      <view class="user">{{ employee_result.employee_name }}</view>
+      <view >{{ totalScore }}分</view>
+      <view class="result">
+        <view class="tip-text">答对 {{ correct }} 题， 答错 {{ wrong }} 题， 未答 {{ unanswered }} 题</view>
+        <view class="tip-bar">
+          <view class="icon icon-1">
+            <van-icon name="checked" color="#409eff"/>
+            {{ correct }}
+          </view> 
+          <view class="icon icon-2">
+            <van-icon name="clear" color="#ee0a24"/>
+            {{ wrong }}
+          </view> 
+          <view class="icon icon-3">
+            <van-icon name="clear" color="#ccc"/>
+            {{ unanswered }}
+          </view> 
+        </view>
+        <view class="see-detail">
+          <view class="question-item" wx:for="{{ resultList }}" wx:key="index">
+            <view class="item color-1" wx:if="{{ item.isCorrect === 'true' }}">{{  index + 1 }}</view>
+            <view class="item color-2" wx:elif="{{ item.isCorrect === 'false' }}">{{  index + 1 }}</view>
+            <view class="item color-3" wx:else>{{  index + 1 }}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="result-box">
+        <view class="again" bindtap="tryAgain">再考一次</view>
+        <view class="see-result" bindtap="seeLog">查看试卷</view>
+      </view>
+    </view>
+    <!-- <view class="tip">技术提供 驭道数据</view> -->
+  </view>
+</view>

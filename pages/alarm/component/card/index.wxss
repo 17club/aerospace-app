@@ -1,0 +1,13 @@
+.card {
+  margin-top: 32rpx;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.speed-box {
+  display: flex;
+  align-items: center;
+}

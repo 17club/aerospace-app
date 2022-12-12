@@ -1,0 +1,6 @@
+<!--components/calendar/calendar.wxml-->
+<view class="calendar-container">
+  <van-calendar type="range" bind:confirm="onConfirm" show="{{show}}" color="#357AFF" max-range="{{7}}"
+    show-title="{{false}}" show-subtitle="{{false}}" show-mark="{{false}}" default-date="{{defaultDate}}"
+    min-date="{{minDate}}" max-date="{{maxDate}}" />
+</view>

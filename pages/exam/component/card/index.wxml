@@ -1,0 +1,36 @@
+<view class="card-container" >
+  <view class="title">
+    <image src="/assets/train/course.svg" class="course-img"></image>
+    <text>{{ info.examination.name }}</text>
+    <view wx:if="{{ info.examination.status > 2 }}">
+      <text class="score-type no-passing" wx:if="{{ info.exam_employee.score >= info.examination.passing_score }}">不及格</text>
+      <text class="score-type passing" wx:else>及格</text>
+    </view>
+  </view>
+  <view class="card-content">
+    <view class="mt-24">
+      <view>
+        <text class="time">开始时间:</text>
+        {{ info.begin_time_text }}
+      </view>
+      <view class="mt-16">
+        <text class="time">结束时间:</text>
+        {{info.end_time_text }}
+      </view>
+    </view>
+    <view class="btn btn-1" bindtap="toStudy" data-info="{{ info }}" wx:if="{{ info.cur_status === 1 }}">开始考试</view>
+    <view class="btn btn-2" bindtap="toJump" data-info="{{ info }}" wx:elif="{{ info.cur_status === 2 }}">继续考试</view>
+    <view wx:elif="{{ info.cur_status === 3 }}">
+      <view class="btn btn-1" wx:if="{{ info.exam_employee.score >= info.examination.passing_score && info.end_time > curTime }}" data-info="{{ info }}" bindtap="toExam">再考一次</view>
+      <view class="btn btn-3"  bindtap="toLog" data-info="{{ info }}">查看试卷</view>
+    </view>
+    <view wx:else>
+      <view class="btn btn-1" bindtap="toStudy" data-info="{{ info }}" wx:if="{{ info.exam_employee.status < 2 && curTime < info.end_time }}">开始考试</view>
+      <view class="btn btn-2" bindtap="toJump" data-info="{{ info }}" wx:elif="{{ info.exam_employee.status === 2 }}">继续考试</view>
+      <view wx:else>
+        <view class="btn btn-1" wx:if="{{ info.exam_employee.score >= info.examination.passing_score && info.end_time > curTime }}" data-info="{{ info }}" bindtap="toExam">再考一次</view>
+        <view class="btn btn-3"  bindtap="toLog" data-info="{{ info }}">查看试卷</view>
+      </view>
+    </view>
+  </view>
+</view>

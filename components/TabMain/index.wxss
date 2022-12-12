@@ -1,0 +1,39 @@
+.tab-container {
+  position: sticky;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 100vw;
+}
+.tab-item {
+  line-height: 42rpx;
+  color:  #7D7D7D;
+  flex: 1;
+  text-align: center;
+}
+.tab-current {
+  position: relative;
+  color: #409EFF;
+}
+.tab-current::after {
+  content: '';
+  position: absolute;
+  bottom: -8rpx;
+  top: 61rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100rpx;
+  height: 2px;
+  background-color: #409EFF;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.shadow-text {
+  height: 0;
+  font-size: 32rpx;
+  overflow: hidden;
+  visibility: hidden;
+  display: block;
+}

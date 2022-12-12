@@ -1,0 +1,14 @@
+<view class="container">
+  <navigation-bar navigation-data="{{navigationData}}">
+    <view slot="bottom">
+      <view class="tabmain">
+        <tab-main tabs="{{ tabList }}" tabIndex="{{ tabIndex }}" bind:tabChange="tabChange"></tab-main>
+      </view>
+    </view>
+  </navigation-bar>
+  <view class="card-list">
+    <view wx:for="{{ courseList }}"  wx:key="index">
+      <card info="{{ item }}" curTime="{{ curTime }}"  bind:updatecourse="updateCourse"></card>
+    </view>
+  </view>
+</view>

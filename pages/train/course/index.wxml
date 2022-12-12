@@ -1,0 +1,12 @@
+<view>
+  <navigation-bar navigation-data="{{navigationData}}">
+    <view slot="bottom">
+      <view class="title">驾驶员安全驾驶培训</view>
+    </view>
+  </navigation-bar>
+  <view class="card-content">
+    <view wx:for="{{ list }}"  wx:key="index">
+      <card info="{{ item }}" bind:updatematerial="updateMaterial"></card>
+    </view>
+  </view>
+</view>

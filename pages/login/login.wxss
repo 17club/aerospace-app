@@ -1,0 +1,80 @@
+/* pages/login/login.wxss */
+.button {
+  margin-top: 50rpx;
+}
+
+.header {
+  height: 600rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.header image {
+  width: 70%;
+  height: 300rpx;
+  margin-top: 138rpx;
+}
+
+.f-head {
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 42rpx;
+}
+
+.icon {
+  width: 32rpx;
+  height: 38rpx;
+  margin-right: 28rpx;
+}
+
+.button {
+  margin-top: 50rpx;
+}
+
+.header {
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.header image {
+  width: 70%;
+  height: 300rpx;
+  margin-top: 138rpx;
+}
+
+.form {
+  margin: 0 48rpx;
+}
+
+.form-item {
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  border-bottom: 1px solid #ebedf0;
+}
+
+.w-200 {
+  width: 200rpx;
+}
+.submit-btn button {
+  width: 380rpx;
+  margin: 300rpx auto 0;
+  border-radius: 16rpx;
+}
+
+.msg-code-btn  button {
+  border-radius: 16rpx;
+}
+.w-274 {
+  width: 274rpx;
+}
+.w-382 {
+  width: 382rpx;
+}
+.error-color {
+  color: #fe2617;
+  font-size: 24rpx;
+}

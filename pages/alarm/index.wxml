@@ -1,0 +1,19 @@
+<view class="container">
+  <navigation-bar navigation-data="{{navigationData}}"></navigation-bar>
+  <view class="alarm-content">
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+      <view class="picker">
+        <text>日期:</text>
+        <text class="picker-date">{{date}}</text>
+      </view>
+    </picker>
+    <view>
+      <view  class="alarm-count-box">
+        全部警告 <text class="alarm-count">{{ alarmList.length }}</text>
+      </view>
+    </view>
+    <view wx:for="{{ alarmList }}" wx:key="index">
+      <card info="{{ item }}"></card>
+    </view>
+  </view>
+</view>

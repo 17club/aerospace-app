@@ -1,0 +1,16 @@
+<!--components/navigation-bar/navigation-bar.wxml-->
+<view class="nav-bar" style="height:{{navBarHeight}}px;" catchtouchmove="onTouchMove">
+  <view wx:if="{{navigationData.search}}">
+    <view bindtap="bindBack" class="l-arrow" style="left:{{menuRight + 4}}px; bottom:{{menuBotton + 12}}px;"></view>
+    <icon class="weui-icon-search_in-box" type="search" size="16"
+      style="left:{{menuRight + 32}}px; bottom:{{menuBotton + 8}}px;"></icon>
+    <input class="search" type="search" placeholder="{{navigationData.search.placeholder}}" bindconfirm="bindSearch"
+      style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight + 24}}px; bottom:{{menuBotton}}px;"></input>
+  </view>
+  <view wx:else class="content" style="margin-top:{{navBarHeight - menuHeight}}px;">
+    <view bindtap="bindBack" class="l-arrow" style="left:{{menuRight + 4}}px; bottom:{{menuBotton + 12}}px;" wx:if="{{ navigationData.back }}"></view>
+    <text>{{navigationData.title}}</text>
+  </view>
+  <slot name="bottom"></slot>
+</view>
+<view style="margin-top:{{navBarHeight}}px;"></view>

@@ -1,0 +1,14 @@
+.title {
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #fff;
+  padding: 0 24rpx;
+  border-top: 1px solid #eee;
+  margin-top: 18rpx;
+}
+
+.card-content {
+  padding: 0 24rpx;
+  margin-top: 278rpx;
+}

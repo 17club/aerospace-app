@@ -1,0 +1,7 @@
+<!--components/subline-tree/department-level1/department-level1.wxml-->
+<scroll-view class="select-v-list" scroll-y="true">
+  <view wx:for="{{departmentLevel1List}}" wx:for-item="departmentData" wx:key="index" data-id="{{departmentData.id}}"
+    class="select-v-item {{activeId === departmentData.id ? 'active' : ''}}" bindtap="onItemClicked">
+    {{departmentData.name}}
+  </view>
+</scroll-view>

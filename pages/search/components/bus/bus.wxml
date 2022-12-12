@@ -1,0 +1,44 @@
+<!--pages/search/components/bus/bus.wxml-->
+<view class="bus-container" bindtap="bindShowBus" style="border-radius: {{show_third ? '20rpx' : 0}};">
+  <view class="first">
+    <text class="ln">{{license_number}}</text>
+    <image src="/assets/search-bus-online.png" wx:if="{{online}}" class="online-label"></image>
+    <image src="/assets/search-bus-offline.png" wx:else class="online-label"></image>
+  </view>
+  <view class="second">
+    <text>{{subline_name}}</text>
+  </view>
+  <view class="third" wx:if="{{show_third}}">
+    <image style="width: 19rpx; height: 21rpx; margin-right: 10rpx;" src="/assets/monitor-driver.png">
+    </image>
+    <text style="margin-right: 60rpx;">{{driver_name}}</text>
+    <image style="width: 20rpx; height: 20rpx; margin-right: 10rpx;" src="/assets/monitor-clock.png">
+    </image>
+    <text>{{last_online_time_str}}</text>
+  </view>
+  <view class="fourth">
+    <image style="width: 21rpx; height: 24rpx; margin-right: 10rpx;" src="/assets/search-location.png">
+    </image>
+    <text>{{location_name}}</text>
+  </view>
+  <view class="fifth" wx:if="{{showButton}}">
+    <view class="flex">
+      <view class="fifth-part" bindtap="onLiveClicked">
+        <!-- <image src="/assets/search-bus-live-active.png" wx:if="{{online}}"></image>
+        <image src="/assets/search-bus-live-inactive.png" wx:else></image> -->
+        <image src="/assets/search-bus-live-inactive.png"></image>
+        <text>实时监控</text>
+      </view>
+      <view class="fifth-part" bindtap="onMessageClicked">
+        <image src="/assets/search-bus-message-active.png" wx:if="{{online}}"></image>
+        <image src="/assets/search-bus-message-inactive.png" wx:else></image>
+        <text>消息下发</text>
+      </view>
+    </view>
+    <view class="fifth-part mt-20" style="justify-content: flex-end;" bindtap="onAlarmClicked">
+      <image src="/assets/monitor-alarm.png"></image>
+      <text>告警</text>
+    </view>
+  </view>
+</view>
+<view class="split"></view>

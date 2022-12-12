@@ -1,0 +1,41 @@
+<view class="container">
+  <navigation-bar navigation-data="{{navigationData}}"></navigation-bar>
+  <view class="alarm-detail-content">
+    <view class="flex">
+      <view class="detail-desc-item">
+        <text class="desc-text">时间：</text>
+        <text>{{ info.date }}</text>
+      </view>
+      <view class="detail-desc-item">
+        <text class="desc-text">速度：</text>
+        <text>{{ info.speed }}</text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="detail-desc-item">
+        <text class="desc-text">驾驶员：</text>
+        <text>{{ info.driver_name }}</text>
+      </view>
+      <view class="detail-desc-item">
+        <text class="desc-text">联系方式：</text>
+        <text> {{ info.telephone }} </text>
+      </view>
+    </view>
+    <view class="flex">
+      <view class="detail-desc-item">
+        <text class="desc-text">地址：</text>
+        <text>{{ info.location_name }}</text>
+      </view>
+    </view>
+    <view style="padding: 24rpx 0;">
+      <map style="width: 100%; height: 400rpx;" class="map"  longitude="{{info.location.longitude}}" latitude="{{info.location.latitude}}" scale="18" markers="{{markers}}"
+      polyline="{{polyline}}"></map>
+    </view>
+    <view class="flex-wrap">
+      <view wx:for="{{ info.urls }}" wx:key="index" class="file-item">
+        <image src="{{ item.url }}" wx:if="{{ item.is_image }}" bindtap="imagePreview" data-src="{{ item.url }}" class="image-and-video" />
+        <video src="{{ item.url }}" autoplay="true" data-src="{{ item.url }}" id="my-video" wx:else class="image-and-video"></video>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="tab-container">
+  <view
+    wx:for="{{ tabs }}"
+    wx:key="index"
+    data-index="{{ index }}"
+    bindtap="tabChange"
+    class="tab-item text-xl {{ tabIndex === index ? 'tab-current text-bold' : ''}}">
+      <text>{{ item.label }}</text>
+    </view>
+</view>

@@ -1,0 +1,31 @@
+.alarm-detail-content {
+  background: #fff;
+  width: calc(100vw - 64rpx);
+  padding: 0 32rpx 70rpx 32rpx;
+  margin-top: 20rpx;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.detail-desc-item {
+  flex: 1;
+  margin-top: 15rpx;
+  font-size: 24rpx;
+}
+.desc-text {
+  color: #aaa;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.file-item {
+ width: 49%;
+ border: 1px solid red;
+}
+.image-and-video {
+  width: 336rpx;
+  height: 271rpx;
+}

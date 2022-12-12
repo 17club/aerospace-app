@@ -1,0 +1,81 @@
+/* pages/search/components/bus/bus.wxss */
+.bus-container {
+  height: 180rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #fff;
+  position: relative;
+}
+
+.first {
+  display: flex;
+  align-items: center;
+}
+
+.ln {
+  color: #357AFF;
+  font-size: 34rpx;
+  margin-right: 20rpx;
+}
+
+.online-label {
+  width: 70rpx;
+  height: 30rpx;
+}
+
+.second {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.third {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 24rpx;
+}
+
+.fourth {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.fifth {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.fifth-part {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.fifth-part image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.fifth-part text {
+  color: #333;
+  font-size: 22rpx;
+}
+
+.split {
+  width: 95%;
+  margin: 0 auto;
+  height: 2rpx;
+  background-color: #E6E6E6;
+}
+ .flex {
+   display: flex;
+ }
+ .mt-20 {
+   margin-top: 20rpx;
+ }

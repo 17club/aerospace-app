@@ -1,0 +1,14 @@
+<!--pages/search/components/line/line.wxml-->
+<view class="line-container" bindtap="bindShowSublineOneway">
+  <view class="first">
+    <text class="sn">{{subline_name}}</text>
+    <image src="/assets/search-line-up.png" wx:if="{{up}}" class="direction-label"></image>
+    <image src="/assets/search-line-down.png" wx:else class="direction-label"></image>
+  </view>
+  <view class="second">
+    <text style="margin-right: 15rpx;">{{begin_station_name}}</text>
+    <image src="/assets/search-arrow.png" style="width: 42rpx; height: 14rpx;"></image>
+    <text style="margin-left: 15rpx;">{{end_station_name}}</text>
+  </view>
+</view>
+<view class="split"></view>

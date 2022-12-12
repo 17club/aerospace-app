@@ -1,0 +1,5 @@
+/* components/calendar/calendar.wxss */
+.calendar-container {
+  width: 100%;
+  height: 100%;
+}

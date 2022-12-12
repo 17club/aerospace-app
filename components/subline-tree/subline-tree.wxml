@@ -1,0 +1,10 @@
+<!--components/subline-tree/subline-tree.wxml-->
+<view class="subline-tree-contianer">
+  <department-level1 departmentLevel1List="{{sublineTreeData.departmentLevel1List}}"
+    bind:department-level1-clicked="onLevel1Clicked"></department-level1>
+  <department-level2 departmentLevel2List="{{sublineTreeData.departmentLevel2List}}"
+    bind:department-level2-clicked="onLevel2Clicked"></department-level2>
+  <subline subline-map="{{sublineTreeData.sublineMap}}" bind:subline-clicked="onSublineClicked">
+  </subline>
+</view>
+<button type="primary" class="button" hover-class="h-button" bindtap="onConfirm">确定</button>

@@ -1,0 +1,15 @@
+<!--pages/login_choice/login_choice.wxml-->
+<view class='login-container'>
+  <view class='header'
+    style="background-image: url(https://download.zhcslyg.com/wx/img/login-back.png); background-size: 100% 100%; background-repeat: no-repeat;">
+    <image src="/assets/login-title.png" mode="aspectFit" />
+  </view>
+  <view class='button'>
+    <van-button type='primary' size="large" color="#357AFF" bind:click="onUsernameLogin"
+      custom-style="border-radius: 10rpx;">用户名登录</van-button>
+  </view>
+  <view class='button' style="margin-top: 50rpx;">
+    <van-button type='primary' size="large" color="#357AFF" bind:click="onWechatLogin"
+      custom-style="border-radius: 10rpx;">微信登录</van-button>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+.tabmain {
+  border-top: 1px solid #eee;
+  margin-top: 18rpx;
+}
+
+.card-list {
+  padding: 24rpx;
+  margin-top: 90rpx;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="28px" viewBox="0 0 24 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>tag/第一</title>
+    <g id="tag/第一" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="路径" fill="#FF4A4A" fill-rule="nonzero" points="12 1.94288972e-16 24 1.94288972e-16 24 27.9999918 12 20.9999938 0 27.9999918 0 0"></polygon>
+        <polygon id="路径" fill-opacity="0.30001639" fill="#FFFFFF" fill-rule="nonzero" points="12 21.0000021 0 28 0 8.20312255e-06 12 8.20312255e-06"></polygon>
+        <text id="1" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="14" font-weight="bold" line-spacing="22" fill="#FFFFFF">
+            <tspan x="8" y="14">1</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,0 +1,7 @@
+<!--components/subline-tree/subline/subline.wxml-->
+<scroll-view class="select-v-list" scroll-y="true">
+  <view wx:for="{{sublineList}}" wx:for-item="sublineData" wx:key="index" data-id="{{sublineData.id}}"
+    class="select-v-item {{activeId === sublineData.id ? 'active' : ''}}" bindtap="onItemClicked">
+    {{sublineData.name}}
+  </view>
+</scroll-view>

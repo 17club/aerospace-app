@@ -1,0 +1,17 @@
+/* pages/login_choice/login_choice.wxss */
+.button {
+  width: 80%;
+  margin: 300rpx auto 0 auto;
+}
+
+.header {
+  height: 600rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.header image {
+  width: 70%;
+  height: 300rpx;
+  margin-top: 138rpx;
+}

@@ -1,0 +1,61 @@
+.next-icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24rpx;
+  padding: 24rpx;
+  width: calc(100vw - 48rpx -48rpx);
+  background-color: #ffffff;
+}
+
+.course {
+  width: 102rpx;
+  height:  102rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background: #3E64FF;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  color: #fff;
+  margin-right: 24rpx;
+}
+.flex {
+  display: flex;
+}
+.label {
+  width: 92rpx;
+  height: 36rpx;
+  border-radius: 22rpx;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 36rpx;
+  margin-left: 16rpx;
+}
+.label-1 {
+  background: #fef0f0;
+  border: 2rpx solid #fde2e2;
+  color: #f56c6c;
+}
+.label-2 {
+  background: #ecf5ff;
+  border: 2rpx solid #d9ecff;
+  color: #409eff;
+}
+.label-3 {
+  background: #f0f9eb;
+  border: 2rpx solid #e1f3d8;
+  color: #67c23a;
+}
+
+
+.process {
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  color: #999;
+}

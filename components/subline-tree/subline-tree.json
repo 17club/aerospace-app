@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "department-level1": "./department-level1/department-level1",
+    "department-level2": "./department-level2/department-level2",
+    "subline": "./subline/subline"
+  }
+}
