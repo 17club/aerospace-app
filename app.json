@@ -1,13 +1,8 @@
 {
-  "entryPagePath": "pages/train/index/index",
+  "entryPagePath": "pages/login/login",
   "pages": [
     "pages/login/login",
-    "pages/train/index/index",
-    "pages/train/course/index",
-    "pages/exam/index/index",
-    "pages/exam/question/index",
-    "pages/exam/result/index",
-    "pages/exam/log/index"
+    "pages/index/index"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
@@ -22,25 +17,6 @@
   },
   "window": {
     "navigationStyle": "custom"
-  },
-  "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#3852FF",
-    "borderStyle": "white",
-    "list": [
-      {
-        "selectedIconPath": "assets/tabitem-monitor-active.png",
-        "iconPath": "assets/tabitem-monitor-inactive.png",
-        "pagePath": "pages/train/index/index",
-        "text": "培训"
-      },
-      {
-        "selectedIconPath": "assets/tabitem-my-active.png",
-        "iconPath": "assets/tabitem-my-inactive.png",
-        "pagePath": "pages/exam/index/index",
-        "text": "考试"
-      }
-    ]
   },
   "sitemapLocation": "sitemap.json",
   "debug": false

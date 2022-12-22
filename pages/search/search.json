@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "navigation-bar": "/components/navigation-bar/navigation-bar",
-    "bus": "./components/bus/bus",
-    "line": "./components/line/line"
-  }
-}
