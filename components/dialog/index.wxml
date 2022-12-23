@@ -1,0 +1,4 @@
+<view class="dialog-container">
+  <image src="../../assets/tip.png" class="tip-img"></image>
+  <view>{{ message }}</view>
+</view>

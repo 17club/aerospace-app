@@ -2,15 +2,23 @@
 <view class='login-container' style="background: url(../../assets/bg.png) center center no-repeat; background-size: 100% 100%;">
   <view class="form">
     <view class="f-header">欢迎登录</view>
-    <form bindsubmit="formSubmit">
-     <view class="f-content">
-       <view class="f-label">手机号</view>
-       <input class="f-input" type="number"  bindinput="onTelephoneChanged" placeholder="请输入手机号" maxlength="11" />
+     <view class="f-item">
+       <view class="f-label f-phone">手机号</view>
+       <view class="f-content">
+        <image src="../../assets/phone.png" class="label-image"></image>
+        <input class="f-input" type="number" bindinput="onPhoneChanged"  maxlength="11" />
+       </view>
      </view>
-     <view class="f-content">
+     <view class="f-item">
        <view class="f-label">验证码</view>
+       <view class="f-content">
+        <image src="../../assets/check.png" class="label-check"></image>
+        <input class="f-input" type="number"  bindinput="onMsgCodeChanged" />
+        <view class="code-btn {{ canSendMagCode ? '' : 'disabled-btn' }}" bindtap="sendCaptchaMsg">获取验证码</view>
+       </view>
      </view>
-    </form>
-    <van-toast id="van-toast" />
+     <view class="login-btn {{ canSubmit ? '' : 'disabled-btn' }}" bindtap="toSubmit">登录</view>
+     <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
+    <dialog message="{{ dialogMessage }}" wx:if="{{ dialogMessage }}"></dialog>
   </view>
 </view>

@@ -9,31 +9,30 @@ Page({
       phone: '',
       verification_code: '',
     },
-    canSendMagCode: true,
-    canSubmit: true,
-    isValidatePhone: true,
-    isValidateMsgCode: true,
+
+    canSendMagCode: false,
+    canSubmit: false,
     loading: false,
 
     timer: '',//定时器名字
-    countDownNum: '60'//倒计时初始值,
+    countDownNum: '60', //倒计时初始值,
+
+    dialogMessage: ''
   },
-  async formSubmit() {
+  async toSubmit() {
     const params = {
       phone: this.data.form.phone,
       verification_code: this.data.form.verification_code,
     }
     this.setData({ loading: true})
-    if (!params.verification_code) {
-      this.setData({
-        isValidateMsgCode: false
-      })
-      return
-    }
+
     const res = await request(ApiPath.loginEmployeeUser, params)
     if (res.employee_id == '0') {
       const msg = res?.rsp?.msg || res?.resp?.msg
-      Toast(msg)
+      this.setData({
+        dialogMessage: msg,
+      })
+      this.dialogShow()
       this.setData({ loading: false })
       return
     }
@@ -46,10 +45,12 @@ Page({
     if (!phone) return
     if (!phone.match(phoneRegex)) {
       this.setData({
-        isValidatePhone: false
+        dialogMessage: '手机号格式不正确',
       })
+      this.dialogShow()
       return
     }
+
     const params = {phone: this.data.form.phone}
     await request(ApiPath.getVerificationCode, params)
     this.countDown()
@@ -76,20 +77,15 @@ Page({
     const phone = detail.value
     this.setData({ 
       ['form.phone']: phone,
-      canSendMagCode: !phone,
-      isValidatePhone: true
+      canSendMagCode: !!phone,
     })
   },
   onMsgCodeChanged({ detail }) {
     this.setData({ loading: false })
-    if (!detail.value.match(/^\d{6}$/)) {
-      this.setData({
-        isValidateMsgCode: false
-      })
-      return
+    if (detail.value.match(/^\d{6}$/)) {
+      this.setData({ canSubmit: true })
     }
     this.setData({ ['form.verification_code']: detail.value })
-    this.setData({ isValidateMsgCode: true })
   },
   onLoad: async function () {
     const is_login = wx.getStorageSync('is_login')
@@ -98,5 +94,12 @@ Page({
         url: '/pages/index/index',
       })
     }
+  },
+  dialogShow() {
+    setTimeout(() => {
+      this.setData({
+        dialogMessage: '',
+      })
+    }, 1000)
   },
 })
