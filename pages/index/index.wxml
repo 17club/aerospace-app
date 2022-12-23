@@ -1,2 +1,22 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<!--pages/login/login.wxml-->
+<view class='login-container' style="background: url(../../assets/bg.png) center center no-repeat; background-size: 100% 100%;">
+  <view class="form">
+    <view class="f-header">创建姓名</view>
+     <view class="f-item">
+       <view class="f-label f-phone">姓名</view>
+       <view class="f-content">
+        <image src="../../assets/user.png" class="label-image"></image>
+        <input class="f-input" bindinput="onPhoneChanged" placeholder="中英文字符" maxlength="11" />
+       </view>
+     </view>
+     <view class="tip">
+      *名字会被展示在证书上，且不能再更改，请谨慎填写
+     </view>
+     <view class="btn-box">
+       <view class="btn">确认</view>
+       <view class="btn btn-1">返回登录</view>
+     </view>
+     <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
+    <dialog message="{{ dialogMessage }}" wx:if="{{ dialogMessage }}"></dialog>
+  </view>
+</view>
