@@ -29,10 +29,7 @@ Page({
     const res = await request(ApiPath.loginEmployeeUser, params)
     if (res.employee_id == '0') {
       const msg = res?.rsp?.msg || res?.resp?.msg
-      this.setData({
-        dialogMessage: msg,
-      })
-      this.dialogShow()
+      this.dialogShow(msg)
       this.setData({ loading: false })
       return
     }
@@ -44,10 +41,7 @@ Page({
     const phone = this.data.form.phone
     if (!phone) return
     if (!phone.match(phoneRegex)) {
-      this.setData({
-        dialogMessage: '手机号格式不正确',
-      })
-      this.dialogShow()
+      this.dialogShow('手机号格式不正确')
       return
     }
 
@@ -95,7 +89,8 @@ Page({
       })
     }
   },
-  dialogShow() {
+  dialogShow(msg) {
+    this.setData({ dialogMessage: msg })
     setTimeout(() => {
       this.setData({
         dialogMessage: '',
