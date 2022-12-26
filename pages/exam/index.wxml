@@ -3,19 +3,19 @@
     <view>
       <view class="tip">
         <view class="tip-1">
-          出题 10 {{}}
+          出题 {{ currentIndex }}
         </view> 
         / 20
       </view>
       <view class="progress">
-        <view class="progress-inner"></view>
+        <view class="progress-inner" style="width:{{ 620 * (currentIndex / 20)}}rpx"></view>
       </view>
     </view>
     <view class="question">
       <view class="question-title">
         以下关于太空睡眠区的说法不正确的是: 
       </view>
-      <view class="question-item">
+      <view class="question-item {{ currentSelect ? 'question-current' : '' }}">
         <view class="question-s">
           A
         </view>
@@ -23,9 +23,17 @@
           神州六号的轨道舱有6立方米，给航天员提供了舒适的睡眠区
         </view>
       </view>
+      <view class="question-item">
+        <view class="question-s">
+          B
+        </view>
+        <view class="qusetion-s-c">
+          神州六号的轨道舱有6立方米，给航天员提供了舒适的睡眠区
+        </view>
+      </view>
       <view class="btn-box">
-        <view class="prev-btn btn">上一题</view>
-        <view class="next-btn btn">下一题</view>
+        <view class="prev-btn btn {{ currentIndex == 1 ? 'disable-btn' : '' }}" bindtap="toPrev">上一题</view>
+        <view class="next-btn btn {{ currentIndex == 20 ? 'disable-btn' : '' }}" bindtap="toNext">下一题</view>
       </view>
     </view>
   </view>

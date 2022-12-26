@@ -7,7 +7,7 @@ Page({
   data: {
     form: {
       telephone: '',
-      verification_code: '',
+      captcha: '',
     },
 
     canSendMagCode: false,
@@ -22,11 +22,11 @@ Page({
   async toSubmit() {
     const params = {
       telephone: this.data.form.telephone,
-      verification_code: this.data.form.verification_code,
+      captcha: this.data.form.captcha,
     }
     this.setData({ loading: true})
 
-    const res = await request(ApiPath.loginEmployeeUser, params)
+    const res = await request(ApiPath.login, params)
     if (res.employee_id == '0') {
       const msg = res?.rsp?.msg || res?.resp?.msg
       this.dialogShow(msg)
@@ -45,7 +45,7 @@ Page({
       return
     }
 
-    const params = {telephone: this.data.form.telephone}
+    const params = { telephone: this.data.form.telephone}
     await request(ApiPath.getCaptcha, params)
     this.countDown()
   },
@@ -79,7 +79,7 @@ Page({
     if (detail.value.match(/^\d{6}$/)) {
       this.setData({ canSubmit: true })
     }
-    this.setData({ ['form.verification_code']: detail.value })
+    this.setData({ ['form.captcha']: detail.value })
   },
   onLoad: async function () {
     const is_login = wx.getStorageSync('is_login')

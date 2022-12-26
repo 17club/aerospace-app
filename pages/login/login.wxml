@@ -14,7 +14,8 @@
        <view class="f-content">
         <image src="../../assets/check.png" class="label-check"></image>
         <input class="f-input" type="number"  bindinput="onMsgCodeChanged" />
-        <view class="code-btn {{ canSendMagCode ? '' : 'disabled-btn' }}" bindtap="sendCaptchaMsg">获取验证码</view>
+        <view class="code-btn" wx:if="{{ countDownNum != 60 && countDownNum!= 0 }}">{{ countDownNum }}s</view>
+        <view class="code-btn {{ canSendMagCode ? '' : 'disabled-btn' }}" bindtap="sendCaptchaMsg" wx:else>获取验证码</view>
        </view>
      </view>
      <view class="login-btn {{ canSubmit ? '' : 'disabled-btn' }}" bindtap="toSubmit">登录</view>

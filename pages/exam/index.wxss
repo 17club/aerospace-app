@@ -35,7 +35,7 @@
   margin-right: 5rpx;
 }
 .progress {
-  width: calc(100vw - 40rpx - 90rpx);
+  width: 620rpx;
   height: 12rpx;
   margin: 18rpx auto 0;
   border-radius: 20rpx;
@@ -68,6 +68,12 @@
   background: #f5f5f5;
   border-radius: 80rpx;
   margin-bottom: 30rpx;
+  font-weight: 500;
+  color: #666;
+}
+.question-current {
+  background-color: #0147ba;
+  color: #fff;
 }
 .question-s {
   width: 56rpx;
@@ -81,6 +87,10 @@
   font-size: 32rpx;
   font-weight: bold;
 }
+.question-current .question-s {
+  background-color: #fff;
+  color: #0147ba;
+}
 .qusetion-s-c {
   width: calc(100vw - 60rpx - 40rpx - 56rpx - 14rpx);
 }
@@ -88,6 +98,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 64rpx;
+  margin-top: 100rpx;
 }
 .btn {
   height: 80rpx;
@@ -104,5 +115,10 @@
 }
 .next-btn {
   background-color: #0147ba;
+  color: #fff;
+}
+.disable-btn {
+  background-color: #c4c4c4;
+  border: 1px solid #c4c4c4;
   color: #fff;
 }

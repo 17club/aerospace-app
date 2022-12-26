@@ -4,5 +4,5 @@ export async function jobAfterLogin(employee_id) {
   userInfo.employeeId = employee_id
   wx.setStorageSync(StorageKey.UserInfo, userInfo)
   wx.hideLoading({})
-  wx.switchTab({ url: '/pages/train/index/index'  })
+  wx.switchTab({ url: '/pages/index/index'  })
 }
