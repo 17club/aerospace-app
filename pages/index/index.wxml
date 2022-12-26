@@ -13,8 +13,8 @@
       *名字会被展示在证书上，且不能再更改，请谨慎填写
      </view>
      <view class="btn-box">
-       <view class="btn">确认</view>
-       <view class="btn btn-1">返回登录</view>
+       <view class="btn" bindtap="toConfirm">确认</view>
+       <view class="btn btn-1" bindtap="goBack">返回登录</view>
      </view>
      <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
     <dialog message="{{ dialogMessage }}" wx:if="{{ dialogMessage }}"></dialog>

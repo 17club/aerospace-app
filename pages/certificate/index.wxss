@@ -1,0 +1,62 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.copyright {
+  color: #333;
+  font-size: 24rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 48rpx;
+  left: 0;
+  right: 0;
+}
+
+.back-image {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 30rpx;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  width: calc(100vw - 61rpx - 84rpx);
+  margin-top: 150rpx;
+}
+.prize {
+  width: 210rpx;
+  height: 217rpx;
+}
+.content {
+  background: #fff;
+  border-top-left-radius: 80rpx;
+  border-top-right-radius: 80rpx;
+  height: calc(100vh - 168rpx - 100rpx - 80rpx);
+  width: 100vw;
+}
+.content-t {
+  width: 556rpx;
+  height: 100rpx;
+  background-color: #e9e9e9;
+  margin: 60rpx auto;
+  padding: 40rpx 30rpx;
+  border-radius: 20rpx;
+}
+
+.copy-btn {
+  background-color: #0D52C2;
+  width: 240rpx;
+  height: 80rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 60rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin: 0 auto;
+}

@@ -1,0 +1,14 @@
+<view class='container' style="background: url(../../assets/bg-1.png) center center no-repeat; background-size: 100% 100%;">
+  <image src="../../assets/back.png" class="back-image" style="top:{{ menuHeight }}px;" ></image>
+  <view class="top">
+    <view>恭喜你，测试通过啦！</view>
+    <image src="../../assets/prize.png" mode="" class="prize" />
+  </view>
+  <view class="content"> 
+    <view class="content-t">别灰心，添加客服微信还有机会获取证书哦～</view>
+    <view class="copy-btn">
+      复制客服微信号
+    </view>
+  </view>
+  <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
+</view>

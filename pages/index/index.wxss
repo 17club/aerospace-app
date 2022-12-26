@@ -44,7 +44,7 @@
   line-height: 80rpx;
   text-align: center;
   border-radius: 40rpx;
-  margin-right: 15rpx;
+  margin-right: 15rpx; 
 }
 
 

@@ -1,8 +1,11 @@
 {
-  "entryPagePath": "pages/index/index",
+  "entryPagePath": "pages/submit/index",
   "pages": [
     "pages/login/login",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/exam/index",
+    "pages/certificate/index",
+    "pages/submit/index"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",

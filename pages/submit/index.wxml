@@ -1,0 +1,17 @@
+<view class='container' style="background: url(../../assets/bg-1.png) center center no-repeat; background-size: 100% 100%;">
+  <image src="../../assets/back.png" class="back-image" style="top:{{ menuHeight }}px;" ></image>
+  <view class="top">
+    <view class="tip-info">
+      <view>很遗憾，差一点点就通过了</view>
+      <view class="tip-info-1">
+        <view>别灰心，再学习一下，</view>
+        <view>你还有一次答题机会哦～</view>
+      </view>
+    </view>
+    <image src="../../assets/cry.png" mode="" class="cry" />
+  </view>
+  <view class="content"> 
+    <view class="btn">再答一次</view>
+  </view>
+  <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
+</view>

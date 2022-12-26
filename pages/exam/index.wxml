@@ -1,0 +1,33 @@
+<view class='container' style="background: url(../../assets/bg-1.png) center center no-repeat; background-size: 100% 100%;">
+  <view class="content"> 
+    <view>
+      <view class="tip">
+        <view class="tip-1">
+          出题 10 {{}}
+        </view> 
+        / 20
+      </view>
+      <view class="progress">
+        <view class="progress-inner"></view>
+      </view>
+    </view>
+    <view class="question">
+      <view class="question-title">
+        以下关于太空睡眠区的说法不正确的是: 
+      </view>
+      <view class="question-item">
+        <view class="question-s">
+          A
+        </view>
+        <view class="qusetion-s-c">
+          神州六号的轨道舱有6立方米，给航天员提供了舒适的睡眠区
+        </view>
+      </view>
+      <view class="btn-box">
+        <view class="prev-btn btn">上一题</view>
+        <view class="next-btn btn">下一题</view>
+      </view>
+    </view>
+  </view>
+  <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
+</view>
