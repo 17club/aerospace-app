@@ -3,11 +3,12 @@ import Toast from '@vant/weapp/toast/toast'
 
 export function request(url, data, method = 'POST', app = null) {
   const globalData = (app || getApp()).globalData
-  const apiPath = url.match(/^training/) || url.match(/^examination_wechat/) ? '/trainingquiz/' : globalData.apiPath
+  const apiPath = globalData.apiPath
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${globalData.domain[globalData.env]}${apiPath}${url}`,
       data,
+      dataType: 'json',
       method,
       success: res => {
         const data = res.data
@@ -32,11 +33,9 @@ export function request(url, data, method = 'POST', app = null) {
 }
 
 export const ApiPath = {
-  logout: 'wxmicro/wxlogout',
-  userInfo: 'usr/getUserInfo',
-
-  getVerificationCode: 'examination_wechat/get_verification_code',
-  loginEmployeeUser: 'examination_wechat/login_employee_user',
+  logout: '/sys/logout',
+  login: '/sys/login',
+  getCaptcha: '/sys/getCaptcha',
   
   //train
   getUserRelatedCourse: 'training/get_user_related_course',

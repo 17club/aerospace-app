@@ -1,5 +1,5 @@
 {
-  "entryPagePath": "pages/submit/index",
+  "entryPagePath": "pages/login/login",
   "pages": [
     "pages/login/login",
     "pages/index/index",

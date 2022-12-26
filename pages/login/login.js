@@ -6,7 +6,7 @@ const phoneRegex = /^[1][3,4,5,7,8,9][0-9]{9}$/
 Page({
   data: {
     form: {
-      phone: '',
+      telephone: '',
       verification_code: '',
     },
 
@@ -21,7 +21,7 @@ Page({
   },
   async toSubmit() {
     const params = {
-      phone: this.data.form.phone,
+      telephone: this.data.form.telephone,
       verification_code: this.data.form.verification_code,
     }
     this.setData({ loading: true})
@@ -38,15 +38,15 @@ Page({
     jobAfterLogin(res.employee_id)
   },
   async sendCaptchaMsg() {
-    const phone = this.data.form.phone
-    if (!phone) return
-    if (!phone.match(phoneRegex)) {
+    const telephone = this.data.form.telephone
+    if (!telephone) return
+    if (!telephone.match(phoneRegex)) {
       this.dialogShow('手机号格式不正确')
       return
     }
 
-    const params = {phone: this.data.form.phone}
-    await request(ApiPath.getVerificationCode, params)
+    const params = {telephone: this.data.form.telephone}
+    await request(ApiPath.getCaptcha, params)
     this.countDown()
   },
   countDown() {
@@ -68,10 +68,10 @@ Page({
     })
   },
   onPhoneChanged({ detail }) {
-    const phone = detail.value
+    const telephone = detail.value
     this.setData({ 
-      ['form.phone']: phone,
-      canSendMagCode: !!phone,
+      ['form.telephone']: telephone,
+      canSendMagCode: !!telephone,
     })
   },
   onMsgCodeChanged({ detail }) {
