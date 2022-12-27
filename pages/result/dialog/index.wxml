@@ -1,0 +1,22 @@
+<view class="dialog-container">
+  <view class="dialog-mask">
+  </view>
+  <view class="content">
+    <view>
+      <view>
+        您仅剩一次答题机会，
+      </view>
+      <view>
+        确认开始吗？
+      </view>
+    </view>
+    <view class="footer">
+      <view class="cancel btn" bindtap="toCancel">
+        取消
+      </view>
+      <view class="submit btn" bindtap="toSubmit">
+        确定
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,135 @@
+.container {
+  width: 100vw;
+  padding-bottom: 90rpx;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 48rpx;
+  left: 0;
+  right: 0;
+}
+
+.back-image {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 30rpx;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  width: calc(100vw - 61rpx - 84rpx);
+  margin-top: 150rpx;
+}
+.cry {
+  width: 219rpx;
+  height: 219rpx;
+}
+.tip-info {
+  color: #fff;
+  font-size: 32rpx;
+}
+.tip-info-1 {
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}
+.content {
+  background: #fff;
+  border-radius: 80rpx;
+  width: 100vw;
+  padding-bottom: 120rpx;
+}
+.content-t {
+  width: 556rpx;
+  height: 100rpx;
+  background-color: #e9e9e9;
+  margin: 60rpx auto;
+  padding: 40rpx 30rpx;
+  border-radius: 20rpx;
+}
+
+.btn {
+  background-color: #0D52C2;
+  width: 240rpx;
+  height: 80rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 60rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.question {
+  margin: 48rpx auto 0;
+  width: calc(100vw - 100rpx);
+}
+
+.question-title {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 56rpx;
+}
+.question-item {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 16rpx;
+  background: #f5f5f5;
+  border-radius: 80rpx;
+  margin-bottom: 30rpx;
+  font-weight: 500;
+  color: #666;
+}
+.question-current {
+  background-color: #0147ba;
+  color: #fff;
+}
+.question-s {
+  width: 56rpx;
+  height: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background-color: #D0D0D0;
+  border-radius: 100%;
+  margin-right: 14rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.question-current .question-s {
+  background-color: #fff;
+  color: #0147ba;
+}
+.qusetion-s-c {
+  width: calc(100vw - 60rpx - 40rpx - 56rpx - 14rpx);
+}
+
+.image {
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 14rpx;
+}
+
+.success {
+  color: #11AA66;
+  /* background: ; */
+}
+
+.error {
+  color: #FC355D;
+}
+
+.horiz {
+  width: calc(100vw - 100rpx);
+  margin: 90rpx auto;
+  border-bottom: 1px dotted #ccc;
+}

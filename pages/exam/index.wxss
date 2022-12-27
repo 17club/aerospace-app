@@ -1,6 +1,7 @@
 .container {
-  height: 100vh;
   width: 100vw;
+  min-height: 100vh;
+  padding-bottom: 80rpx;
 }
 
 .copyright {
@@ -16,7 +17,6 @@
 .content {
   background: #fff;
   border-radius: 80rpx;
-  height: calc(100vh - 168rpx - 100rpx - 80rpx);
   width: calc(100vw - 40rpx - 60rpx);
   margin-top: 150rpx;
   padding: 40rpx 30rpx;
@@ -74,6 +74,7 @@
 .question-current {
   background-color: #0147ba;
   color: #fff;
+  
 }
 .question-s {
   width: 56rpx;

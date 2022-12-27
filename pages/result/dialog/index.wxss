@@ -1,0 +1,63 @@
+.dialog-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.dialog-mask {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: #000;
+  opacity: 0.6;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.content {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 400rpx auto;
+  width: calc(100vw - 75rpx - 75rpx - 80rpx - 80rpx);
+  height: 380rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 80rpx;
+}
+.footer {
+  display: flex;
+  width: calc(100vw - 75rpx - 75rpx - 80rpx - 80rpx);
+  justify-content: space-between;
+  margin-top: 80rpx;
+}
+
+.btn {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+}
+
+.cancel {
+  color: #0147ba;
+  border: 1px solid #0147ba;
+}
+
+.submit {
+  background-color: #0147ba;
+  border: 1px solid #0147ba;
+  color: #fff;
+}

@@ -6,7 +6,7 @@
        <view class="f-label f-phone">姓名</view>
        <view class="f-content">
         <image src="../../assets/user.png" class="label-image"></image>
-        <input class="f-input" bindinput="onPhoneChanged" placeholder="中英文字符" maxlength="11" />
+        <input class="f-input" bindinput="onChanged" placeholder="中英文字符" maxlength="20" />
        </view>
      </view>
      <view class="tip">
@@ -17,6 +17,6 @@
        <view class="btn btn-1" bindtap="goBack">返回登录</view>
      </view>
      <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
-    <dialog message="{{ dialogMessage }}" wx:if="{{ dialogMessage }}"></dialog>
+     <van-toast id="van-toast" />
   </view>
 </view>

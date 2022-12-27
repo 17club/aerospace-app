@@ -1,18 +1,108 @@
+import { request, ApiPath } from '../../utils/api'
+import Toast from '@vant/weapp/toast/toast';
+
 Page({
   data: {
-    currentIndex: 10,
-    currentSelect: true
+    currentIndex: 1,
+    currentSelect: true,
+    currentQuestion: {},
+    allQuestionList: [],
+
+    username: '',
+    answerTime: 0,
+    answerEnum: {
+      0: 'A',
+      1: 'B',
+      2: 'C',
+      3: 'D'
+    },
+
+    loading: false,
+  },
+  onLoad(options = { username: 'zzz' }) {
+    this.setData({ username: options.username })
+    this.fetchData()
+  },
+  async fetchData() {
+    const res = await request(ApiPath.questionList, {}, 'get')
+    const allQuestionList = res.data.item_list.map((item, _index) => {
+      return {
+        _index: _index + 1,
+        ...item,
+        question_list: [item.answer_a, item.answer_b, item.answer_c, item.answer_d].map((ques, ques_index) => ({
+          ques_index: ques_index + 1, 
+          select: false,
+          text: ques,
+        })),
+      }
+    })
+    this.setData({
+      currentQuestion: allQuestionList.find((item) => item._index === this.data.currentIndex),
+      answerTime: res.data.answer_times,
+      allQuestionList,
+    })
+  },
+  chooseQuestion(info) {
+    const curInfo = info.currentTarget.dataset.info
+    const currentData = this.data.currentQuestion
+    let allQuestionList = this.data.allQuestionList
+
+    const list = currentData.question_list.map((item) => {
+      return {
+        ...item,
+        select: item.ques_index === curInfo.ques_index
+      }
+    })
+
+    allQuestionList = allQuestionList.map(item => {
+      if (item.id === currentData.id) {
+        item.question_list = list
+      }
+      return { ...item }
+    })
+
+    this.setData({
+      currentQuestion: {
+        ...currentData,
+        question_list: list,
+      },
+      allQuestionList 
+    })
   },
   toPrev() {
     if (this.data.currentIndex == 1) return
+    const currentIndex = --this.data.currentIndex
     this.setData({
-      currentIndex: --this.data.currentIndex
+      currentIndex,
+      currentQuestion: this.data.allQuestionList.find((item) => item._index === currentIndex)
     })
   },
   toNext() {
-    if (this.data.currentIndex == 20) return
+    if (this.data.currentIndex == this.data.allQuestionList.length) return
+    const currentIndex = ++this.data.currentIndex
     this.setData({
-      currentIndex: ++this.data.currentIndex
+      currentIndex,
+      currentQuestion: this.data.allQuestionList.find((item) => item._index === currentIndex)
+    })
+  },
+  async toSubmit() {
+    const data = this.data.allQuestionList
+    const question_id_str = data.map(item => item.id).join(',')
+    const answer_str = data.map(item => item.question_list.find(item => item.select)?.ques_index).join(',')
+    console.log(11111)
+    if (answer_str.length < data.length) {
+      Toast('题目未全部答完！')
+      return
+    }
+    this.setData({ loading: true })
+    const res = await request(ApiPath.questionAdd, {
+      question_id_str,
+      answer_str,
+      name: 'zzzz'
+    })
+    this.setData({ loading: false })
+    wx.navigateTo({
+      url: `/pages/result/index?username=${this.data.username}`,
     })
   }
 })

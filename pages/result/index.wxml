@@ -1,0 +1,27 @@
+<view class='container' style="background: url(../../assets/bg-1.png) center center; background-size:contain">
+  <image src="../../assets/back.png" class="back-image" bindtap="goBack" style="top:{{ menuHeight }}px;" ></image>
+  <view class="top">
+    <view class="tip-info">
+      <view>很遗憾，差一点点就通过了</view>
+      <view class="tip-info-1">
+        <view>别灰心，再学习一下，</view>
+        <view>你还有一次答题机会哦～</view>
+      </view>
+    </view>
+    <image src="../../assets/cry.png" mode="" class="cry" />
+  </view>
+  <view class="content" wx:if="{{ !loading }}">
+    <view class="question" wx:for="{{ answerList }}" wx:key="index" wx:for-index="index">
+      <view class="question-title"> {{ item.topic }}</view>
+      <view class="question-item {{ item.select ? 'question-current' : '' }}" wx:for="{{ item.answer_list }}" wx:key="index" wx:for-item="question"  wx:for-index="question_index">
+        <image src="../../assets/error.png" class="image" wx:if="{{ item.answer == question_index }}"/>
+        <image src="../../assets/success.png" class="image" wx:elif="{{ item.correct_answer == question_index }}"/>
+        <view class="question-s" wx:else>{{ answerEnum[question_index] }}</view>
+        <view class="qusetion-s-c {{ item.answer == question_index ? 'error' : '' }} {{  item.correct_answer == question_index ? 'success' : '' }}">{{ question }}</view>
+      </view>
+      <view class="horiz" wx:if="{{ index + 1 != answerList.length }}"></view>
+    </view>
+    <view class="btn" bindtap="tryAgain">再答一次</view>
+    <dialog bind:dialogCancel="dialogCancel" bind:dialogConfirm="dialogConfirm" wx:if="{{ dialog }}"></dialog>
+  </view>
+</view>

@@ -1,5 +1,5 @@
 <view class='container' style="background: url(../../assets/bg-1.png) center center no-repeat; background-size: 100% 100%;">
-  <image src="../../assets/back.png" class="back-image" style="top:{{ menuHeight }}px;" ></image>
+  <image src="../../assets/back.png" class="back-image" bindtap="goBack" style="top:{{ menuHeight }}px;" ></image>
   <view class="top">
     <view>恭喜你，测试通过啦！</view>
     <image src="../../assets/prize.png" mode="" class="prize" />

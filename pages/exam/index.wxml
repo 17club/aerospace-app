@@ -1,41 +1,30 @@
-<view class='container' style="background: url(../../assets/bg-1.png) center center no-repeat; background-size: 100% 100%;">
+<view class='container' style="background: url(../../assets/bg-1.png) center center; background-size: cover">
   <view class="content"> 
     <view>
       <view class="tip">
         <view class="tip-1">
           出题 {{ currentIndex }}
         </view> 
-        / 20
+        / {{ allQuestionList.length }}
       </view>
       <view class="progress">
-        <view class="progress-inner" style="width:{{ 620 * (currentIndex / 20)}}rpx"></view>
+        <view class="progress-inner" style="width:{{ 620 * (currentIndex / allQuestionList.length)}}rpx"></view>
       </view>
     </view>
     <view class="question">
       <view class="question-title">
-        以下关于太空睡眠区的说法不正确的是: 
+        {{ currentQuestion.topic }}
       </view>
-      <view class="question-item {{ currentSelect ? 'question-current' : '' }}">
-        <view class="question-s">
-          A
-        </view>
-        <view class="qusetion-s-c">
-          神州六号的轨道舱有6立方米，给航天员提供了舒适的睡眠区
-        </view>
-      </view>
-      <view class="question-item">
-        <view class="question-s">
-          B
-        </view>
-        <view class="qusetion-s-c">
-          神州六号的轨道舱有6立方米，给航天员提供了舒适的睡眠区
-        </view>
+      <view class="question-item {{ item.select ? 'question-current' : '' }}" wx:for="{{ currentQuestion.question_list }}" wx:key="index" wx:for-item="item"  wx:for-index="index" bindtap="chooseQuestion" data-info="{{ item }}">
+        <view class="question-s">{{ answerEnum[index] }}</view>
+        <view class="qusetion-s-c">{{ item.text }}</view>
       </view>
       <view class="btn-box">
         <view class="prev-btn btn {{ currentIndex == 1 ? 'disable-btn' : '' }}" bindtap="toPrev">上一题</view>
-        <view class="next-btn btn {{ currentIndex == 20 ? 'disable-btn' : '' }}" bindtap="toNext">下一题</view>
+        <view class="next-btn btn" wx:if="{{ currentIndex === allQuestionList.length }}" bindtap="toSubmit">提交</view>
+        <view class="next-btn btn {{ currentIndex == allQuestionList.length ? 'disable-btn' : '' }}" bindtap="toNext" wx:else>下一题</view>
       </view>
     </view>
+    <van-toast id="van-toast" />
   </view>
-  <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
 </view>
