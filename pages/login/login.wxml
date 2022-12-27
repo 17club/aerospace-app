@@ -1,4 +1,3 @@
-<!--pages/login/login.wxml-->
 <view class='login-container' style="background: url(../../assets/bg.png) center center no-repeat; background-size: 100% 100%;">
   <view class="form">
     <view class="f-header">欢迎登录</view>
@@ -18,8 +17,11 @@
         <view class="code-btn {{ canSendMagCode ? '' : 'disabled-btn' }}" bindtap="sendCaptchaMsg" wx:else>获取验证码</view>
        </view>
      </view>
-     <view class="login-btn {{ canSubmit ? '' : 'disabled-btn' }}" bindtap="toSubmit">登录</view>
+     <view class="login-btn loading-btn" wx:if="{{ loading }}">
+      <van-loading type="spinner" style="margin-right: 10rpx"/>
+     </view>
+     <view class="login-btn {{ canSubmit ? '' : 'disabled-btn' }}" wx:else bindtap="toSubmit">登录</view>
      <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
-    <dialog message="{{ dialogMessage }}" wx:if="{{ dialogMessage }}"></dialog>
+    <van-toast id="van-toast" />
   </view>
 </view>

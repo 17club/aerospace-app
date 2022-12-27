@@ -27,24 +27,21 @@ Page({
     this.setData({ loading: true})
 
     const res = await request(ApiPath.login, params)
-    if (res.employee_id == '0') {
-      const msg = res?.rsp?.msg || res?.resp?.msg
-      this.dialogShow(msg)
-      this.setData({ loading: false })
+    this.setData({ loading: false })
+    if (res.code == 1) {
+      const msg = res.msg
+      Toast.fail(msg);
       return
     }
-    if (res?.rsp?.code == '1') { Toast(res?.rsp.msg) }
-    this.setData({ loading: false })
-    jobAfterLogin(res.employee_id)
+    jobAfterLogin(res.data.token)
   },
   async sendCaptchaMsg() {
     const telephone = this.data.form.telephone
     if (!telephone) return
     if (!telephone.match(phoneRegex)) {
-      this.dialogShow('手机号格式不正确')
+      Toast.fail('请输入正确的手机号')
       return
     }
-
     const params = { telephone: this.data.form.telephone}
     await request(ApiPath.getCaptcha, params)
     this.countDown()

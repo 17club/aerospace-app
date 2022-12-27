@@ -1,8 +1,8 @@
 import { StorageKey } from '../../utils/uniconst'
-export async function jobAfterLogin(employee_id) {
+export async function jobAfterLogin(token) {
   const userInfo = getApp().globalData.userInfo
-  userInfo.employeeId = employee_id
+  userInfo.token = token
   wx.setStorageSync(StorageKey.UserInfo, userInfo)
   wx.hideLoading({})
-  wx.switchTab({ url: '/pages/index/index'  })
+  wx.navigateTo({url: `/pages/index/index`})
 }

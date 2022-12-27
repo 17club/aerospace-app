@@ -1,5 +1,4 @@
 {
   "usingComponents": {
-    "dialog": "../../components/dialog/index" 
   }
 }

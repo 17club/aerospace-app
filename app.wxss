@@ -13,29 +13,6 @@ page {
   align-items: center;
   box-sizing: border-box;
 }
-
-checkbox .wx-checkbox-input {
-  width: 40rpx;
-  height: 40rpx;
-}
-
-checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-  background: #0394F0;
-  border-color:#0394F0;
-}
-
-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
-  border-radius: 50%;
-  width: 40rpx;
-  height: 40rpx;
-  line-height: 40rpx;
-  text-align: center;
-  font-size:30rpx;
-  color:#fff;
-  background: transparent;
-  transform:translate(-50%, -50%) scale(1);
-  -webkit-transform:translate(-50%, -50%) scale(1);
-}
 /* flex布局 */
 .flex-aligin-center {
   display: flex;
@@ -55,4 +32,10 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 }
 .pb-32 {
   padding-bottom: 32rpx;
+}
+
+.van-toast  {
+  width: 340rpx !important;
+  height: 210rpx !important;
+  font-size: 28rpx !important;
 }

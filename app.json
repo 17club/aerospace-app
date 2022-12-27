@@ -17,7 +17,8 @@
     "van-dialog": "@vant/weapp/dialog/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-overlay": "@vant/weapp/overlay/index",
-    "van-toast": "@vant/weapp/toast/index"
+    "van-toast": "@vant/weapp/toast/index",
+    "van-loading": "@vant/weapp/loading/index"
   },
   "window": {
     "navigationStyle": "custom"

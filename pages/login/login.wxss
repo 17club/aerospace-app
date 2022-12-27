@@ -78,3 +78,9 @@
 .disabled-btn {
   background: #888;
 }
+.loading-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .5;
+}
