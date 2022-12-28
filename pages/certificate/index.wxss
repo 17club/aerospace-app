@@ -54,6 +54,9 @@
   display: flex;
   justify-content: center;
 }
+.content-2 {
+  margin-top: 60rpx;
+}
 .wx-code {
   color: #0D52C2;
   font-weight: bold;
@@ -87,4 +90,12 @@
 .canvas {
   height: 1rpx;
   width: 100rpx;
+}
+
+.certificate {
+  
+}
+
+#myCanvas {
+  margin: 0 auto;
 }

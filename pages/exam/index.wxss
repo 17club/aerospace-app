@@ -123,3 +123,9 @@
   border: 1px solid #c4c4c4;
   color: #fff;
 }
+.loading-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .5;
+}

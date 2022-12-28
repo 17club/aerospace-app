@@ -3,6 +3,25 @@
 
 
 "@vant/weapp@^1.10.9":
-  version "1.10.9"
-  resolved "https://registry.yarnpkg.com/@vant/weapp/-/weapp-1.10.9.tgz#e319a7c0cab9fe87d91c99248cd94902623d5857"
-  integrity sha512-hFJ48SCSvRgcwT/9TcxwNnNnWSpy2BpaBfwQwVdU6uwgFH+2OqGL435VQN7EDpIMH8YjHbiM84hueTyxAzIPqQ==
+  "integrity" "sha512-hFJ48SCSvRgcwT/9TcxwNnNnWSpy2BpaBfwQwVdU6uwgFH+2OqGL435VQN7EDpIMH8YjHbiM84hueTyxAzIPqQ=="
+  "resolved" "https://registry.npmjs.org/@vant/weapp/-/weapp-1.10.9.tgz"
+  "version" "1.10.9"
+
+"eventemitter3@^4.0.0":
+  "integrity" "sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw=="
+  "resolved" "https://registry.npmjs.org/eventemitter3/-/eventemitter3-4.0.7.tgz"
+  "version" "4.0.7"
+
+"widget-ui@^1.0.2":
+  "integrity" "sha512-gDXosr5mflJdMA1weU1A47aTsTFfMJhfA4EKgO5XFebY3eVklf80KD4GODfrjo8J2WQ+9YjL1Rd9UUmKIzhShw=="
+  "resolved" "https://registry.npmjs.org/widget-ui/-/widget-ui-1.0.2.tgz"
+  "version" "1.0.2"
+  dependencies:
+    "eventemitter3" "^4.0.0"
+
+"wxml-to-canvas@^1.1.1":
+  "integrity" "sha512-3mDjHzujY/UgdCOXij/MnmwJYerVjwkyQHMBFBE8zh89DK7h7UTzoydWFqEBjIC0rfZM+AXl5kDh9hUcsNpSmg=="
+  "resolved" "https://registry.npmjs.org/wxml-to-canvas/-/wxml-to-canvas-1.1.1.tgz"
+  "version" "1.1.1"
+  dependencies:
+    "widget-ui" "^1.0.2"

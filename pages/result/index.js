@@ -19,8 +19,8 @@ Page({
     loading: false,
   },
 
-  onLoad(options = { username: 'zzz' }) {
-    this.setData({ username: options.username })
+  onLoad() {
+    // this.setData({ username: options.username })
     this.fetchData()
   },
   async fetchData() {
@@ -37,13 +37,13 @@ Page({
     const score = ((len - answerList.length) / len) * 100 
     if (score >= 60) {
       wx.navigateTo({
-        url: `/pages/certificate/index?username=${this.data.username}&type=success`,
+        url: `/pages/certificate/index?username=${data.user_name}&type=success`,
       })
     }
 
     if (data.answer_times >= 2 && score < 60) {
       wx.navigateTo({
-        url: `/pages/certificate/index?username=${this.data.username}&type=error`,
+        url: `/pages/certificate/index?username=${data.user_name}&type=error`,
       })
     }
 

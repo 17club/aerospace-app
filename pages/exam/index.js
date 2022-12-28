@@ -17,14 +17,22 @@ Page({
       3: 'D'
     },
 
-    loading: false,
+    saveLoading: false,
   },
   onLoad(options) {
     this.setData({ username: options.username })
     this.fetchData()
   },
   async fetchData() {
+    wx.showLoading({
+      title: '加载中',
+    })
     const res = await request(ApiPath.questionList, {}, 'get')
+    wx.hideLoading()
+    if (res.code === 1) {
+      Toast(res.msg)
+      return
+    }
     const allQuestionList = res.data.item_list.map((item, _index) => {
       return {
         _index: _index + 1,
@@ -94,13 +102,13 @@ Page({
       Toast('题目未全部答完！')
       return
     }
-    this.setData({ loading: true })
+    this.setData({ saveLoading: true })
     const res = await request(ApiPath.questionAdd, {
       question_id_str,
       answer_str,
       name: 'zzzz'
     })
-    this.setData({ loading: false })
+    this.setData({ saveLoading: false })
     wx.navigateTo({
       url: `/pages/result/index?username=${this.data.username}`,
     })

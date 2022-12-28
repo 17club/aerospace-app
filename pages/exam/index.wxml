@@ -21,7 +21,12 @@
       </view>
       <view class="btn-box">
         <view class="prev-btn btn {{ currentIndex == 1 ? 'disable-btn' : '' }}" bindtap="toPrev">上一题</view>
-        <view class="next-btn btn" wx:if="{{ currentIndex === allQuestionList.length }}" bindtap="toSubmit">提交</view>
+        <view wx:if="{{ currentIndex === allQuestionList.length }}" >
+          <view class="next-btn btn loading-btn" wx:if="{{ saveLoading }}">
+            <van-loading type="spinner" style="margin-right: 10rpx"/>
+          </view>
+          <view class="next-btn btn" wx:else bindtap="toSubmit">提交</view>
+        </view>
         <view class="next-btn btn {{ currentIndex == allQuestionList.length ? 'disable-btn' : '' }}" bindtap="toNext" wx:else>下一题</view>
       </view>
     </view>

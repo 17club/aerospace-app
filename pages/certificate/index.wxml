@@ -10,20 +10,15 @@
     <image src="../../assets/cry.png" mode="" class="cry" wx:else/>
   </view>
   <view class="content"> 
-    <view class="content-t" wx:if="{{ type === 'error' }}">
+    <view class="content-t" wx:if="{{ currentType === 'error' }}">
       <view> 别灰心，添加客服微信还有机会获取证书哦～</view> 
       <view class="content-1"> 客服微信号：<view class="wx-code">vx6548213</view> </view> 
     </view>
-    <view class="content-t" wx:else>
-      <view> 恭喜你通过啦！证书将由中国航天科技国际交流中心统一审核发放，请留意小程序通知提醒领取证书</view> 
-      <!-- <view class="content-1"> 客服微信号：<view class="wx-code">vx6548213</view> </view>  -->
+    <view class="content-2" wx:if="{{ currentType === 'success' }}">
+      <canvas id="myCanvas" type="2d" style="width: 616rpx;height: 680rpx;" />
     </view>
-    <!-- <view class="content-2" wx:if="{{ type === 'success' }}">
-      
-    </view> -->
-    <view class="copy-btn" bindtap="copyCode" wx:if="{{ type === 'error' }}">复制客服微信号</view>
-    <!-- <view class="copy-btn" bindtap="saveToPhone" wx:else>保存到手机</view> -->
-    <canvas canvas-id="haibao"  class='canvas' ></canvas>
+    <view class="copy-btn" bindtap="copyCode" wx:if="{{ currentType === 'error' }}">复制客服微信号</view>
+    <view class="copy-btn" bindtap="saveToPhone" wx:else>保存到手机</view>
   </view>
-  <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
+  <view class="copyright">如需获取官方盖章证书，详情请添加微信号 <view class="wx-code">vx6548213</view></view>
 </view>

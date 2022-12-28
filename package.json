@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.10.9"
+    "@vant/weapp": "^1.10.9",
+    "wxml-to-canvas": "^1.1.1"
   }
 }
