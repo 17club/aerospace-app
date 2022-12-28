@@ -35,7 +35,7 @@
   margin-right: 55rpx;
 }
 .label-check {
-  width: 30rpx;
+  width: 35rpx;
   height: 35rpx;
   margin-left: 52rpx;
   margin-right: 55rpx;
