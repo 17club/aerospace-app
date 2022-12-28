@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   data: {
-    menuHeight: app.globalData.navigationBarData.menuHeight,
+    navBarHeight: app.globalData.navigationBarData.navBarHeight,
     currentType: '',
 
     canvas: '',

@@ -1,5 +1,6 @@
 import { request, ApiPath } from '../../utils/api'
 import Toast from '@vant/weapp/toast/toast';
+const app = getApp()
 
 Page({
   data: {
@@ -7,6 +8,8 @@ Page({
     currentSelect: true,
     currentQuestion: {},
     allQuestionList: [],
+
+    navBarHeight: app.globalData.navigationBarData.navBarHeight,
 
     username: '',
     answerTime: 0,
@@ -31,6 +34,12 @@ Page({
     wx.hideLoading()
     if (res.code === 1) {
       Toast(res.msg)
+      return
+    }
+    if(res.data.answer_times === 2) {
+      wx.navigateTo({
+        url: `/pages/result/index?username=${this.data.username}`,
+      })
       return
     }
     const allQuestionList = res.data.item_list.map((item, _index) => {
@@ -103,10 +112,10 @@ Page({
       return
     }
     this.setData({ saveLoading: true })
-    const res = await request(ApiPath.questionAdd, {
+    await request(ApiPath.questionAdd, {
       question_id_str,
       answer_str,
-      name: 'zzzz'
+      name: this.data.username
     })
     this.setData({ saveLoading: false })
     wx.navigateTo({

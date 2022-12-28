@@ -56,13 +56,14 @@
 }
 .content-2 {
   margin-top: 60rpx;
+  height: 326px;
 }
 .wx-code {
   color: #0D52C2;
   font-weight: bold;
 }
 
-.copy-btn {
+.copy-btn, .save-btn {
   background-color: #0D52C2;
   width: 240rpx;
   height: 80rpx;
@@ -73,6 +74,10 @@
   font-size: 26rpx;
   font-weight: bold;
   margin: 0 auto;
+}
+
+.save-btn {
+  margin-top: 60rpx;
 }
 .tip-info {
   color: #fff;
