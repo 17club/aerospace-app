@@ -121,11 +121,12 @@
 
 .success {
   color: #11AA66;
-  /* background: ; */
+  background: #e7f6ef;
 }
 
 .error {
   color: #FC355D;
+  background: #ffeaee;
 }
 
 .horiz {

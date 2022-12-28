@@ -40,12 +40,23 @@
   width: 100vw;
 }
 .content-t {
-  width: 556rpx;
+  width: 616rpx;
   height: 100rpx;
   background-color: #e9e9e9;
   margin: 60rpx auto;
   padding: 40rpx 30rpx;
   border-radius: 20rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+.content-1 {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.wx-code {
+  color: #0D52C2;
+  font-weight: bold;
 }
 
 .copy-btn {
@@ -59,4 +70,21 @@
   font-size: 26rpx;
   font-weight: bold;
   margin: 0 auto;
+}
+.tip-info {
+  color: #fff;
+  font-size: 32rpx;
+}
+.tip-info-1 {
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}
+.cry {
+  width: 219rpx;
+  height: 219rpx;
+}
+
+.canvas {
+  height: 1rpx;
+  width: 100rpx;
 }

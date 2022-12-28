@@ -19,7 +19,7 @@ Page({
 
     loading: false,
   },
-  onLoad(options = { username: 'zzz' }) {
+  onLoad(options) {
     this.setData({ username: options.username })
     this.fetchData()
   },
@@ -88,7 +88,7 @@ Page({
   async toSubmit() {
     const data = this.data.allQuestionList
     const question_id_str = data.map(item => item.id).join(',')
-    const answer_str = data.map(item => item.question_list.find(item => item.select)?.ques_index).join(',')
+    const answer_str = data.map(item => item.question_list.find(item => item.select)?.ques_index).map(item => item - 1).join(',')
     console.log(11111)
     if (answer_str.length < data.length) {
       Toast('题目未全部答完！')

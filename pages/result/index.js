@@ -1,10 +1,12 @@
 const app = getApp()
+import Toast from '@vant/weapp/toast/toast'
 import { request, ApiPath } from '../../utils/api'
 Page({
   data: {
     menuHeight: app.globalData.navigationBarData.menuHeight,
     username: '',
     answerList: [],
+    answerTimes: '',
 
     answerEnum: {
       0: 'A',
@@ -25,13 +27,23 @@ Page({
     this.setData({ loading:true})
     const res = await request(ApiPath.questionResult, {}, 'get')
     this.setData({ loading: false})
+    if (res.code === 1) {
+      Toast.fail(res.msg)
+      return
+    }
     const data = res.data
     const len = data.item_list.length
     const answerList = data.item_list.filter(item  => item.answer != item.correct_answer)
-    const score = (len - answerList.length) / len
-    if (score * 100 > 60) {
+    const score = ((len - answerList.length) / len) * 100 
+    if (score >= 60) {
       wx.navigateTo({
-        url: `/pages/certificate/index?username=${this.data.username}`,
+        url: `/pages/certificate/index?username=${this.data.username}&type=success`,
+      })
+    }
+
+    if (data.answer_times >= 2 && score < 60) {
+      wx.navigateTo({
+        url: `/pages/certificate/index?username=${this.data.username}&type=error`,
       })
     }
 
@@ -39,7 +51,8 @@ Page({
       answerList: answerList.map(item => ({
         ...item,
         answer_list: [item.answer_a, item.answer_b, item.answer_c, item.answer_d]
-      }))
+      })),
+      answerTimes: data.answer_times
     })
 
   },
