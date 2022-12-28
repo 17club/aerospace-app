@@ -43,7 +43,11 @@ Page({
       return
     }
     const params = { telephone: this.data.form.telephone}
-    await request(ApiPath.getCaptcha, params)
+    const res = await request(ApiPath.getCaptcha, params)
+    if (res.code === 1) {
+      Toast.fail(res.msg)
+      return
+    }
     this.countDown()
   },
   countDown() {
