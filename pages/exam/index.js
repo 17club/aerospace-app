@@ -88,9 +88,9 @@ Page({
   async toSubmit() {
     const data = this.data.allQuestionList
     const question_id_str = data.map(item => item.id).join(',')
-    const answer_str = data.map(item => item.question_list.find(item => item.select)?.ques_index).map(item => item - 1).join(',')
-    console.log(11111)
-    if (answer_str.length < data.length) {
+    const answerList = data.filter(item => item.question_list.find(item => item.select)).map(item => item.question_list.find(ques => ques.select)?.ques_index).map(item => item - 1)
+    const answer_str = answerList.join(',')
+    if (answerList.length < data.length) {
       Toast('题目未全部答完！')
       return
     }
