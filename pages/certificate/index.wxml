@@ -1,4 +1,4 @@
-<view class='container' style="background: url(../../assets/bg-1.png) center center no-repeat; background-size: 100% 100%;">
+<view class='container' style="background: url(https://yj-dev1.obs.cn-north-4.myhuaweicloud.com/bg-1-Av4biRCC4m.png) center center no-repeat; background-size: cover">
   <image src="../../assets/back.png" class="back-image" bindtap="goBack" style="top:{{ menuHeight }}px;" ></image>
   <view class="top">
     <view wx:if="{{ currentType === 'success' }}">恭喜你，测试通过啦！</view>

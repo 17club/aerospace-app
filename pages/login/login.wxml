@@ -1,4 +1,4 @@
-<view class='login-container' style="background: url(../../assets/bg.png) center center no-repeat; background-size: 100% 100%;">
+<view class='login-container' style="background: url(https://yj-dev1.obs.cn-north-4.myhuaweicloud.com/bg-ntwgAvc2Uc.png) center center no-repeat; background-size: cover">
   <view class="form">
     <view class="f-header">欢迎登录</view>
      <view class="f-item">
