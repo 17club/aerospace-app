@@ -9,6 +9,10 @@ Page({
     wx.navigateTo({ url: `/pages/login/login` })
   },
   toConfirm() {
+    if (!this.data.username) {
+      Toast('请输入姓名!')
+      return
+    }
     wx.navigateTo({
       url: `/pages/exam/index?username=${this.data.username}`,
     })
