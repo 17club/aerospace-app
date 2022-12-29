@@ -58,7 +58,7 @@ Page({
   },
   goBack() {
     wx.navigateTo({
-      url: `/pages/exam/index?username=${this.data.username}`,
+      url: `/pages/exam/index?username=${this.data.username}&tryAgain=true`,
     })
   },
   tryAgain() {
@@ -70,7 +70,7 @@ Page({
   dialogConfirm() {
     this.setData({ dialog: false })
     wx.navigateTo({
-      url: `/pages/exam/index?username=${this.data.username}`,
+      url: `/pages/exam/index?username=${this.data.username}&tryAgain=true`,
     })
   },
 })

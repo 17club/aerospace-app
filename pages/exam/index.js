@@ -21,9 +21,10 @@ Page({
     },
 
     saveLoading: false,
+    tryAgain: false,
   },
   onLoad(options) {
-    this.setData({ username: options.username })
+    this.setData({ username: options.username, tryAgain: options.tryAgain || false })
     this.fetchData()
   },
   async fetchData() {
@@ -135,11 +136,10 @@ Page({
       wx.navigateTo({
         url: `/pages/certificate/index?username=${questionData.user_name}&type=error`,
       })
-    } else {
+    } else if (!this.data.tryAgain) {
       wx.navigateTo({
         url: `/pages/result/index?username=${this.data.username}`,
       })
-
     }
   }
 })
