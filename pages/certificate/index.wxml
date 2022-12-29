@@ -1,5 +1,4 @@
 <view class='container' style="background: url(https://yj-dev1.obs.cn-north-4.myhuaweicloud.com/bg-1-Av4biRCC4m.png) center center no-repeat; background-size: cover">
-  <image src="../../assets/back.png" class="back-image" bindtap="goBack" style="top:{{ navBarHeight }}px;" ></image>
   <view class="top">
     <view wx:if="{{ currentType === 'success' }}">恭喜你，测试通过啦！</view>
     <view class="tip-info"  wx:else>
@@ -19,6 +18,6 @@
     </view>
     <view class="copy-btn" bindtap="copyCode" wx:if="{{ currentType === 'error' }}">复制客服微信号</view>
     <view class="save-btn" bindtap="saveToPhone" wx:else>保存到手机</view>
-    <view class="copyright">如需获取官方盖章证书，详情请添加微信号 <view class="wx-code">vx6548213</view></view>
+    <view class="copyright" wx:if="{{ currentType === 'success' }}">如需获取官方盖章证书，详情请添加微信号 <view class="wx-code">vx6548213</view></view>
   </view>
 </view>
