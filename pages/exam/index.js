@@ -34,6 +34,7 @@ Page({
       wx.redirectTo({ url: '/pages/login/login'})
       return
     }
+    this.getResult()
     const res = await request(ApiPath.questionList, {}, 'get')
     wx.hideLoading()
     if (res.code === 1) {
