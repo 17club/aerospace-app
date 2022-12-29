@@ -37,7 +37,7 @@ Page({
         
         const image = canvas.createImage()
         image.onload = () => { 
-          ctx.drawImage(image, 0, 0, 310, 340)
+          ctx.drawImage(image, 0, 0, 310, 280)
           ctx.strokeStyle = "#000"
           ctx.font = '10px';
           const username = this.data.username || '误认为3'

@@ -35,10 +35,10 @@ Page({
       wx.redirectTo({ url: '/pages/login/login'})
       return
     }
-    this.getResult()
+    await this.getResult()
     const res = await request(ApiPath.questionList, {}, 'get')
     wx.hideLoading()
-    if (res.code === 1) {
+    if (res.code === 1 && res.msg != '登录失败') {
       Toast(res.msg)
       return
     }
@@ -122,6 +122,10 @@ Page({
   },
   async getResult() {
     const questionRes = await request(ApiPath.questionResult, {}, 'get')
+    if (questionRes.msg === '登录失败') {
+      wx.navigateTo({ url: `/pages/login/login` })
+      return
+    }
     if (questionRes.data.answer_times === 0)  return
     this.setData({ saveLoading: false })
     const questionData = questionRes.data
