@@ -17,7 +17,7 @@ Page({
     timer: '',//定时器名字
     countDownNum: '60', //倒计时初始值,
 
-    dialog: true
+    dialog: false
   },
   async toSubmit() {
     const params = {

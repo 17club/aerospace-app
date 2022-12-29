@@ -30,7 +30,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    this.getResult()
+    await this.getResult()
     const res = await request(ApiPath.questionList, {}, 'get')
     wx.hideLoading()
     if (res.code === 1) {
@@ -116,6 +116,10 @@ Page({
     this.getResult()
   },
   async getResult() {
+    if (!getApp().globalData?.userInfo?.token) {
+      wx.redirectTo({ url: '/pages/login/login'})
+      return
+    }
     const questionRes = await request(ApiPath.questionResult, {}, 'get')
     if (questionRes.data.answer_times === 0)  return
     this.setData({ saveLoading: false })
