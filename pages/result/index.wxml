@@ -13,7 +13,7 @@
   <view class="content" wx:if="{{ !loading }}">
     <view class="question" wx:for="{{ answerList }}" wx:key="index" wx:for-index="index">
       <view class="question-title"> {{ item.topic }}</view>
-      <view class="question-item {{ item.answer == question_index ? 'error' : '' }} {{  item.correct_answer == question_index ? 'success' : '' }}" wx:for="{{ item.answer_list }}" wx:key="index" wx:for-item="question"  wx:for-index="question_index">
+      <view class="question-item {{ item.answer == question_index ? 'error' : '' }} {{  item.correct_answer == question_index ? 'success' : '' }}" wx:for="{{ item.answer_list }}" wx:key="index" wx:for-item="question"  wx:for-index="question_index" wx:if="{{ question }}">
         <image src="../../assets/error.png" class="image" wx:if="{{ item.answer == question_index }}"/>
         <image src="../../assets/success.png" class="image" wx:elif="{{ item.correct_answer == question_index }}"/>
         <view class="question-s" wx:else>{{ answerEnum[question_index] }}</view>

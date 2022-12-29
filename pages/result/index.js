@@ -19,8 +19,8 @@ Page({
     loading: false,
   },
 
-  onLoad() {
-    // this.setData({ username: options.username })
+  onLoad(options) {
+    this.setData({ username: options.username })
     this.fetchData()
   },
   async fetchData() {

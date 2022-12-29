@@ -15,9 +15,9 @@
       <view class="question-title">
         {{ currentQuestion.topic }}
       </view>
-      <view class="question-item {{ item.select ? 'question-current' : '' }}" wx:for="{{ currentQuestion.question_list }}" wx:key="index" wx:for-item="item"  wx:for-index="index" bindtap="chooseQuestion" data-info="{{ item }}">
-        <view class="question-s" wx:if="item.text">{{ answerEnum[index] }}</view>
-        <view class="qusetion-s-c" wx:if="item.text">{{ item.text }}</view>
+      <view class="question-item {{ item.select ? 'question-current' : '' }}" wx:for="{{ currentQuestion.question_list }}" wx:key="index" wx:for-item="item" wx:for-index="index" bindtap="chooseQuestion" data-info="{{ item }}" wx:if="{{ item.text }}">
+        <view class="question-s">{{ answerEnum[index] }}</view>
+        <view class="qusetion-s-c">{{ item.text }}</view>
       </view>
       <view class="btn-box">
         <view class="prev-btn btn {{ currentIndex == 1 ? 'disable-btn' : '' }}" bindtap="toPrev">上一题</view>

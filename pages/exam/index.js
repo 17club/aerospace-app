@@ -36,12 +36,6 @@ Page({
       Toast(res.msg)
       return
     }
-    if(res.data.answer_times === 2) {
-      wx.navigateTo({
-        url: `/pages/result/index?username=${this.data.username}`,
-      })
-      return
-    }
     const allQuestionList = res.data.item_list.map((item, _index) => {
       return {
         _index: _index + 1,
@@ -117,9 +111,30 @@ Page({
       answer_str,
       name: this.data.username
     })
+
+    this.getResult()
+  },
+  async getResult() {
+    const questionRes = await request(ApiPath.questionResult, {}, 'get')
+    if (questionRes.msg === '用户没答过题')  return
     this.setData({ saveLoading: false })
-    wx.navigateTo({
-      url: `/pages/result/index?username=${this.data.username}`,
-    })
+    const questionData = questionRes.data
+    const len = questionData.item_list.length
+    const questionAnswserList = questionData.item_list.filter(item  => item.answer != item.correct_answer)
+    const score = ((len - questionAnswserList.length) / len) * 100 
+    if (score >= 60) {
+      wx.navigateTo({
+        url: `/pages/certificate/index?username=${questionData.user_name}&type=success`,
+      })
+    } else if (questionData.answer_times >= 2 && score < 60) {
+      wx.navigateTo({
+        url: `/pages/certificate/index?username=${questionData.user_name}&type=error`,
+      })
+    } else {
+      wx.navigateTo({
+        url: `/pages/result/index?username=${this.data.username}`,
+      })
+
+    }
   }
 })
