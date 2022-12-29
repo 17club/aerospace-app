@@ -23,5 +23,6 @@
      <view class="login-btn {{ canSubmit ? '' : 'disabled-btn' }}" wx:else bindtap="toSubmit">登录</view>
      <view class="copyright">Copyright ©️ 2012-2022 modao.cc</view>
     <van-toast id="van-toast" />
+    <dialog bind:dialogCancel="dialogCancel" bind:dialogConfirm="dialogConfirm" wx:if="{{ dialog }}"></dialog>
   </view>
 </view>

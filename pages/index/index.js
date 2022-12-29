@@ -5,7 +5,9 @@ Page({
   data: {
     username: ''
   },
-  goBack() {
+  async goBack() {
+    await request(ApiPath.login, {})
+    jobAfterLogin('')
     wx.navigateTo({ url: `/pages/login/login` })
   },
   toConfirm() {

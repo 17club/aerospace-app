@@ -30,6 +30,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
+    this.getResult()
     const res = await request(ApiPath.questionList, {}, 'get')
     wx.hideLoading()
     if (res.code === 1) {
@@ -116,7 +117,7 @@ Page({
   },
   async getResult() {
     const questionRes = await request(ApiPath.questionResult, {}, 'get')
-    if (questionRes.msg === '用户没答过题')  return
+    if (questionRes.data.answer_times === 0)  return
     this.setData({ saveLoading: false })
     const questionData = questionRes.data
     const len = questionData.item_list.length

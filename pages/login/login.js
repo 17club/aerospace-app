@@ -17,7 +17,7 @@ Page({
     timer: '',//定时器名字
     countDownNum: '60', //倒计时初始值,
 
-    dialogMessage: ''
+    dialog: true
   },
   async toSubmit() {
     const params = {
@@ -45,7 +45,12 @@ Page({
     const params = { telephone: this.data.form.telephone}
     const res = await request(ApiPath.getCaptcha, params)
     if (res.code === 1) {
-      Toast.fail(res.msg)
+      const msg = res.msg
+      if(msg === '用户未找到') {
+        this.setData({ dialog: true })
+      } else {
+        Toast.fail(msg);
+      }
       return
     }
     this.countDown()
@@ -90,12 +95,18 @@ Page({
       })
     }
   },
-  dialogShow(msg) {
-    this.setData({ dialogMessage: msg })
-    setTimeout(() => {
-      this.setData({
-        dialogMessage: '',
-      })
-    }, 1000)
+  dialogCancel() {
+    this.setData({ dialog: false })
+  },
+  dialogConfirm() {
+    this.setData({ dialog: false })
+    wx.setClipboardData({
+      data: 'vx6548213',
+      success () {
+        wx.getClipboardData({
+          success (res) {}
+        })
+      }
+    })
   },
 })

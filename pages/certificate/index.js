@@ -37,15 +37,15 @@ Page({
         
         const image = canvas.createImage()
         image.onload = () => { 
-          ctx.drawImage(image, 0, 0, 300, 320)
+          ctx.drawImage(image, 0, 0, 310, 340)
           ctx.strokeStyle = "#000"
           ctx.font = '10px';
-          const username = this.data.username
+          const username = this.data.username || '误认为3'
           const isAllLetter = username.match(/[a-zA-Z]/g)
           if ((isAllLetter && username.length > 13) || (!isAllLetter && username.length > 7)) {
-            ctx.strokeText(username, 90, 140)
+            ctx.strokeText(username, 100, 140)
           } else {
-            ctx.strokeText(username, 100, 150)
+            ctx.strokeText(username, 120, 150)
           }
        }
         image.src = '../../assets/book.png'
@@ -69,7 +69,6 @@ Page({
     })
   },
   saveToPhone() {
-    console.log('111')
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,

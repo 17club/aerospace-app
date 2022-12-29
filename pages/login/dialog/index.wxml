@@ -1,0 +1,27 @@
+<view class="dialog-container">
+  <view class="dialog-mask">
+  </view>
+  <view class="content">
+    <view>
+      <view style="font-size: 35rpx; font-weight: bold; text-align: center;">
+        手机号错误
+      </view>
+      <view style="font-size: 28rpx; margin-top: 30rpx;">
+        <view>
+          您可能还没有在商场购买过商品，可购买后再答题。
+        </view>
+        <view style="margin-top: 30rpx;">
+          如有疑问， 请联系客服微信： vx3333？
+        </view>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="cancel btn" bindtap="toCancel">
+        确认
+      </view>
+      <view class="submit btn" bindtap="toSubmit">
+        复制微信号
+      </view>
+    </view>
+  </view>
+</view>
