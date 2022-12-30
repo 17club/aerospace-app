@@ -40,7 +40,7 @@ Page({
           ctx.drawImage(image, -7, 0, 310, 310)
           ctx.strokeStyle = "#000"
           ctx.font = '10px';
-          const username = this.data.username || '嘻嘻嘻嘻嘻嘻嘻嘻寻'
+          const username = this.data.username
           const isAllLetter = username.match(/^[a-zA-Z]+$/)
           if ((isAllLetter && username.length > 13) || (!isAllLetter && username.length > 7)) {
             ctx.strokeText(username, 90, 130)
