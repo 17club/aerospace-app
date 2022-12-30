@@ -101,7 +101,7 @@ Page({
   dialogConfirm() {
     this.setData({ dialog: false })
     wx.setClipboardData({
-      data: 'vx6548213',
+      data: 'hangtiansn',
       success () {
         wx.getClipboardData({
           success (res) {}

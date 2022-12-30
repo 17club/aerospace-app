@@ -37,15 +37,15 @@ Page({
         
         const image = canvas.createImage()
         image.onload = () => { 
-          ctx.drawImage(image, 18, 0, 310, 310)
+          ctx.drawImage(image, -7, 0, 310, 310)
           ctx.strokeStyle = "#000"
           ctx.font = '10px';
           const username = this.data.username || '嘻嘻嘻嘻嘻嘻嘻嘻寻'
           const isAllLetter = username.match(/^[a-zA-Z]+$/)
           if ((isAllLetter && username.length > 13) || (!isAllLetter && username.length > 7)) {
-            ctx.strokeText(username, 120, 130)
+            ctx.strokeText(username, 90, 130)
           } else {
-            ctx.strokeText(username, 120, 145)
+            ctx.strokeText(username, 90, 145)
           }
        }
         image.src = '../../assets/book.png'
@@ -60,7 +60,7 @@ Page({
   },
   copyCode() {
     wx.setClipboardData({
-      data: 'vx6548213',
+      data: 'hangtiansn',
       success () {
         wx.getClipboardData({
           success (res) {}
@@ -69,7 +69,6 @@ Page({
     })
   },
   saveToPhone() {
-    console.log(1)
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
@@ -77,7 +76,6 @@ Page({
       height: 310,
       canvas: this.canvas,
       success:function(res) {
-        console.log(2, res)
         let img = res.tempFilePath
         wx.saveImageToPhotosAlbum({
           filePath: img,
