@@ -37,15 +37,15 @@ Page({
         
         const image = canvas.createImage()
         image.onload = () => { 
-          ctx.drawImage(image, 0, 0, 310, 310)
+          ctx.drawImage(image, 18, 0, 310, 310)
           ctx.strokeStyle = "#000"
           ctx.font = '10px';
-          const username = this.data.username
+          const username = this.data.username || '嘻嘻嘻嘻嘻嘻嘻嘻寻'
           const isAllLetter = username.match(/^[a-zA-Z]+$/)
           if ((isAllLetter && username.length > 13) || (!isAllLetter && username.length > 7)) {
-            ctx.strokeText(username, 100, 130)
+            ctx.strokeText(username, 120, 130)
           } else {
-            ctx.strokeText(username, 105, 145)
+            ctx.strokeText(username, 120, 145)
           }
        }
         image.src = '../../assets/book.png'
@@ -69,6 +69,7 @@ Page({
     })
   },
   saveToPhone() {
+    console.log(1)
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
@@ -76,19 +77,20 @@ Page({
       height: 310,
       canvas: this.canvas,
       success:function(res) {
+        console.log(2, res)
         let img = res.tempFilePath
         wx.saveImageToPhotosAlbum({
           filePath: img,
           success() {
             wx.showToast({
-              title:'成功保存',
+              title:'保存成功',
               icon: 'none',
               duration: 1000
             });
           },
           fail() {
             wx.showToast({
-              title: '保存失败',
+              title: '相册未授权',
               icon: 'none',
               duration: 2000
             })
@@ -96,7 +98,7 @@ Page({
         })
       },
       fail: function(e) {
-        console.log(e)
+        console.log(3, e)
       }
     })
   }

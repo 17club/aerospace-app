@@ -77,7 +77,7 @@
 }
 
 .save-btn {
-  margin-top: 60rpx;
+  margin-top: 120rpx;
 }
 .tip-info {
   color: #fff;

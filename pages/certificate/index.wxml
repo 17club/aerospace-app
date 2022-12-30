@@ -14,7 +14,7 @@
       <view class="content-1"> 客服微信号：<view class="wx-code">vx6548213</view> </view> 
     </view>
     <view class="content-2" wx:if="{{ currentType === 'success' }}">
-      <canvas id="myCanvas" type="2d" style="width: 616rpx;height: 720rpx;" />
+      <canvas id="myCanvas" type="2d" style="width: 616rpx;height: 690rpx;" />
     </view>
     <view class="copy-btn" bindtap="copyCode" wx:if="{{ currentType === 'error' }}">复制客服微信号</view>
     <view class="save-btn" bindtap="saveToPhone" wx:else>保存到手机</view>
