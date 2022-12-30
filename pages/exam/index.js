@@ -38,7 +38,8 @@ Page({
     await this.getResult()
     const res = await request(ApiPath.questionList, {}, 'get')
     wx.hideLoading()
-    if (res.code === 1 && res.msg != '登录失败') {
+    if (res.code === 1 && res.msg == '登录失败') return
+    if (res.code === 1) {
       Toast(res.msg)
       return
     }

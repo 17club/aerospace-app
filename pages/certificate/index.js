@@ -37,15 +37,15 @@ Page({
         
         const image = canvas.createImage()
         image.onload = () => { 
-          ctx.drawImage(image, 0, 0, 310, 280)
+          ctx.drawImage(image, 0, 0, 310, 310)
           ctx.strokeStyle = "#000"
           ctx.font = '10px';
-          const username = this.data.username || '误认为3'
-          const isAllLetter = username.match(/[a-zA-Z]/g)
+          const username = this.data.username
+          const isAllLetter = username.match(/^[a-zA-Z]+$/)
           if ((isAllLetter && username.length > 13) || (!isAllLetter && username.length > 7)) {
-            ctx.strokeText(username, 100, 140)
+            ctx.strokeText(username, 100, 130)
           } else {
-            ctx.strokeText(username, 120, 150)
+            ctx.strokeText(username, 105, 145)
           }
        }
         image.src = '../../assets/book.png'
