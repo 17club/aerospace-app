@@ -127,6 +127,7 @@ Page({
       wx.navigateTo({ url: `/pages/login/login` })
       return
     }
+    this.setData({ username: questionRes.data.user_name })
     if (questionRes.data.answer_times === 0)  return
     this.setData({ saveLoading: false })
     const questionData = questionRes.data

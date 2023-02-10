@@ -10,6 +10,7 @@ Page({
   },
 
   onLoad(options) {
+    console.log(options, 222)
     this.setData({
       currentType: options.type || 'success',
       username: options.username
